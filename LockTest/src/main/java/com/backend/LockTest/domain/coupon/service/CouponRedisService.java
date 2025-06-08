@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.redisson.api.RScript;
 import org.redisson.api.RedissonClient;
+import org.redisson.client.codec.StringCodec;
 import org.springframework.stereotype.Service;
 
 import com.backend.LockTest.domain.coupon.constant.CouponConstant;
@@ -24,7 +25,7 @@ public class CouponRedisService {
 
 		String sha = luaScriptManager.ensureSha();
 
-		Long result = redisson.getScript().evalSha(
+		Long result = redisson.getScript(StringCodec.INSTANCE).evalSha(
 			RScript.Mode.READ_WRITE,
 			sha,
 			RScript.ReturnType.INTEGER,

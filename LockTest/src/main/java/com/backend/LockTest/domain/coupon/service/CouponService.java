@@ -15,4 +15,6 @@ public interface CouponService {
 
 	void issueCouponWithRedissonLock(final Long id);
 
+	void issueCouponWithLuaScript(final Long id);
+
 }
