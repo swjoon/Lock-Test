@@ -6,7 +6,7 @@ spring:
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
-      maximum-pool-size: 120
+      maximum-pool-size: 50
       minimum-idle: 10
       idle-timeout: 30000
 
@@ -30,8 +30,8 @@ spring:
       lettuce:
         pool:
           min-idle: 0
-          max-idle: 120
-          max-active: 120
+          max-idle: 100
+          max-active: 100
 
 logging:
   level:

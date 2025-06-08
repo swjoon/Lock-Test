@@ -80,7 +80,7 @@ public class RedisConfig {
 
 		SingleServerConfig singleServerConfig = config.useSingleServer()
 			.setAddress(REDISSON_HOST_PREFIX.formatted(host, port))
-			.setConnectionPoolSize(64)
+			.setConnectionPoolSize(100)
 			.setIdleConnectionTimeout(10_000)
 			.setRetryAttempts(3)
 			.setRetryInterval(1500);
